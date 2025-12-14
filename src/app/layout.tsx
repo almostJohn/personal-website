@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import type { PropsWithChildren } from "react";
-import { jetBrainsMono } from "@/util/fonts";
+import { inter } from "@/util/fonts";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/util/cn";
 
@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 	icons: {
 		other: [
 			{
-				url: "/favicon.png",
+				url: "/favicon.jpg",
 				sizes: "32x32",
-				type: "image/png",
+				type: "image/jpeg",
 			},
 		],
 	},
@@ -40,11 +40,11 @@ export default function RootLayout({ children }: PropsWithChildren) {
 		<html lang="en" suppressHydrationWarning>
 			<body
 				className={cn(
-					"bg-neutral-50 text-neutral-950 text-sm antialiased min-h-svh",
-					jetBrainsMono.className,
+					"min-h-screen bg-neutral-100 text-neutral-900 antialiased",
+					inter.className,
 				)}
 			>
-				<main className="flex flex-col">{children}</main>
+				{children}
 			</body>
 		</html>
 	);
