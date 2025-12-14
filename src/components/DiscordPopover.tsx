@@ -10,6 +10,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "./ui/Avatar";
 import { discordUserId } from "@/util/discordUserId";
 import { getDiscordAvatarUrl } from "@/util/getDiscordAvatarUrl";
 import { ArrowUpRight } from "lucide-react";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 type DiscordPopoverProps = {
 	readonly initialData?: Types.Presence;
@@ -18,6 +19,8 @@ type DiscordPopoverProps = {
 export function DiscordPopover({ initialData }: DiscordPopoverProps) {
 	const data = useLanyardWS(discordUserId, { initialData });
 
+	const isMobile = useMediaQuery("(max-width: 640px)");
+
 	return (
 		<Popover>
 			<PopoverTrigger asChild>
@@ -25,7 +28,7 @@ export function DiscordPopover({ initialData }: DiscordPopoverProps) {
 					<Discord className="size-6 shrink-0" />
 				</button>
 			</PopoverTrigger>
-			<PopoverContent align="start" className="p-6">
+			<PopoverContent align={isMobile ? "center" : "start"} className="p-6">
 				<div className="flex flex-col gap-4">
 					<div className="mx-auto flex justify-center">
 						<Avatar className="size-20 rounded-full border border-neutral-300">
