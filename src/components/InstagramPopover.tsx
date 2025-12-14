@@ -1,9 +1,14 @@
+"use client";
+
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { SiInstagram as Instagram } from "@icons-pack/react-simple-icons";
 import { ArrowUpRight } from "lucide-react";
 import { Popover, PopoverTrigger, PopoverContent } from "./ui/Popover";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/Avatar";
 
 export function InstagramPopover() {
+	const isMobile = useMediaQuery("(max-width: 640px)");
+
 	return (
 		<Popover>
 			<PopoverTrigger asChild>
@@ -11,7 +16,7 @@ export function InstagramPopover() {
 					<Instagram className="size-6 shrink-0" />
 				</button>
 			</PopoverTrigger>
-			<PopoverContent align="start" className="p-6">
+			<PopoverContent align={isMobile ? "center" : "start"} className="p-6">
 				<div className="flex flex-col gap-4">
 					<div className="mx-auto flex justify-center">
 						<Avatar className="size-20 rounded-full border border-neutral-300">
