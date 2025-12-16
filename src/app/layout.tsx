@@ -40,7 +40,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
 		<html lang="en" suppressHydrationWarning>
 			<body
 				className={cn(
-					"min-h-screen bg-neutral-100 text-neutral-900 antialiased",
+					"min-h-svh bg-neutral-900 text-neutral-100 antialiased",
 					inter.className,
 				)}
 			>
