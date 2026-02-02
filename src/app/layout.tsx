@@ -1,9 +1,10 @@
+import { SiteHeader } from "@/components/SiteHeader";
+import { siteConfig } from "@/config/site";
 import "@/styles/globals.css";
+import { cn } from "@/util/cn";
+import { jetBrainsMono } from "@/util/fonts";
 import type { Metadata } from "next";
 import type { PropsWithChildren } from "react";
-import { inter } from "@/util/fonts";
-import { siteConfig } from "@/config/site";
-import { cn } from "@/util/cn";
 
 export const metadata: Metadata = {
 	title: siteConfig.title,
@@ -11,9 +12,9 @@ export const metadata: Metadata = {
 	icons: {
 		other: [
 			{
-				url: "/favicon.jpg",
+				url: "/ShibaCool.png",
 				sizes: "32x32",
-				type: "image/jpeg",
+				type: "image/png",
 			},
 		],
 	},
@@ -41,10 +42,13 @@ export default function RootLayout({ children }: PropsWithChildren) {
 			<body
 				className={cn(
 					"min-h-svh bg-neutral-900 text-neutral-100 antialiased",
-					inter.className,
+					jetBrainsMono.className,
 				)}
 			>
-				{children}
+				<div className="mx-auto flex max-w-4xl flex-col px-4 py-8">
+					<SiteHeader />
+					{children}
+				</div>
 			</body>
 		</html>
 	);

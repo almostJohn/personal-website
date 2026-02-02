@@ -1,70 +1,81 @@
-import { InfoSection } from "@/components/InfoSection";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar";
-import { discordUserId } from "@/util/discordUserId";
-import {
-	SiNextdotjs as NextJSIcon,
-	SiReact as ReactIcon,
-} from "@icons-pack/react-simple-icons";
+import { LinksSection } from "@/components/LinksSection";
+import { Name } from "@/components/Name";
+import { SectionList } from "@/components/SectionList";
+import { Code2, MapPin } from "lucide-react";
+
+const projectItems = [
+	{
+		title: "personal-website",
+		role: "creator and maintainer",
+		description: "My corner of the web — projects, ideas, and things I build.",
+		href: "https://almostjohn.vercel.app",
+	},
+	{
+		title: "app-tsconfig",
+		role: "creator and maintainer",
+		description:
+			"Generate clean, opinionated tsconfig.json setups for modern TypeScript projects.",
+		href: "https://app-tsconfig.vercel.app",
+	},
+];
 
 export default async function Page() {
-	const lanyardPromise = await fetch(
-		`https://api.lanyard.rest/v1/users/${discordUserId}`,
-	);
-	const lanyardData = await lanyardPromise.json();
-
 	return (
-		<div className="mx-auto flex min-h-screen max-w-2xl flex-col p-6 pt-12 pb-32 md:pt-20">
-			<div className="flex flex-col gap-6">
-				<div className="flex items-start">
-					<Avatar className="size-30 rounded-full border border-neutral-700">
-						<AvatarImage
-							src="https://github.com/almostJohn.png"
-							alt="almostJohn"
-						/>
-						<AvatarFallback className="rounded-full bg-neutral-800 text-4xl font-bold">
-							AJ
-						</AvatarFallback>
-					</Avatar>
+		<div className="mt-12 flex flex-col">
+			<div className="mb-16 space-y-4">
+				<h1 className="mb-4 text-4xl font-bold">
+					<Name text="john gale garcia" />
+				</h1>
+				<div className="flex flex-col gap-2 text-neutral-400">
+					<div className="flex items-center gap-2">
+						<MapPin className="size-4 shrink-0" />
+						<p>olongapo city, philippines</p>
+					</div>
+					<div className="flex items-center gap-2">
+						<Code2 className="size-4 shrink-0" />
+						<p>software developer</p>
+					</div>
 				</div>
-				<div className="flex flex-col gap-2">
-					<h2 className="text-2xl leading-tight font-bold">John</h2>
-					<span className="text-sm">
-						<a
-							href="https://github.com/almostJohn"
-							rel="noreferrer"
-							target="_blank"
-							className="hover:underline"
-						>
-							almostJohn
-						</a>{" "}
-						• he/him
-					</span>
-				</div>
-				<p className="w-full text-sm/6.5 whitespace-pre-wrap">
-					I&apos;m a Software Developer based in the Philippines. I love
-					building things, shuffling cards, and solving problems. I love
-					language design and web development. I mostly use{" "}
+				<p className="leading-relaxed">
+					i&apos;m a 25 y/o software developer based in the philippines. i love
+					building things, shuffling cards, and solving problems. i love
+					language design and web development. i mostly use{" "}
+					<a
+						href="https://www.typescriptlang.org/"
+						rel="noreferrer"
+						target="_blank"
+						className="text-[#5865f2] underline underline-offset-2"
+					>
+						typescript
+					</a>
+					,{" "}
 					<a
 						href="https://nextjs.org"
 						rel="noreferrer"
 						target="_blank"
-						className="inline-flex items-center justify-center gap-1 rounded-md border border-neutral-700 bg-neutral-800 px-2 py-0.5 text-xs font-medium whitespace-nowrap underline"
+						className="text-[#5865f2] underline underline-offset-2"
 					>
-						<NextJSIcon className="size-3.5 shrink-0" /> Next.js
+						next.js
 					</a>
-					, a full-stack framework built with{" "}
+					, a full-stack framework built on top of{" "}
 					<a
 						href="https://react.dev"
 						rel="noreferrer"
 						target="_blank"
-						className="inline-flex items-center justify-center gap-1 rounded-md border border-neutral-700 bg-neutral-800 px-2 py-0.5 text-xs font-medium whitespace-nowrap underline"
+						className="text-[#5865f2] underline underline-offset-2"
 					>
-						<ReactIcon className="size-3.5 shrink-0" /> React
+						react
 					</a>
 					.
 				</p>
 			</div>
-			<InfoSection initialData={lanyardData.data} />
+			<SectionList
+				title="projects"
+				items={projectItems}
+				viewAllHref="/projects"
+				viewAllText="all projects"
+			/>
+			<LinksSection />
 		</div>
 	);
 }
