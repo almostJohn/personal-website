@@ -1,7 +1,7 @@
 const links = [
 	{ label: "email", href: "mailto:garcia.johngale@gmail.com" },
 	{ label: "github", href: "https://github.com/almostJohn" },
-	{ label: "x.com", href: "https://x.com/almostJohn" },
+	{ label: "x.com", href: "https://x.com/almostJohn1" },
 	{ label: "fb.com", href: "https://facebook.com/alsojohn01" },
 	{ label: "discord", href: "https://discord.com/users/996354867708841984" },
 ];
