@@ -21,9 +21,6 @@ const projects = [
 export function ProjectSection() {
 	return (
 		<section className="mb-16">
-			<h2 className="mb-6 text-sm font-bold">
-				<span className="text-blue-600">*</span> projects
-			</h2>
 			<div className="space-y-8">
 				{projects.map((project) => (
 					<a
@@ -38,16 +35,16 @@ export function ProjectSection() {
 								<h2 className="text-sm font-bold underline underline-offset-4">
 									{project.title}
 								</h2>
-								<Icons.ExternalLink className="size-4 shrink-0 opacity-0 transition-opacity group-hover:opacity-100" />
+								<Icons.ArrowUpRight className="size-4 shrink-0 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
 							</div>
 							<div className="mt-3">
 								<p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
 									{project.role}
 								</p>
 								<p className="text-sm text-neutral-500">
-									{project.description}
+									{project.description.toLowerCase()}
 								</p>
-								<div className="mt-3 flex flex-wrap gap-4">
+								<div className="mt-4 flex flex-wrap gap-4">
 									{project.stack.map((item) => (
 										<span
 											key={item}
