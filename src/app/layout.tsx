@@ -1,10 +1,10 @@
-import { SiteHeader } from "@/components/SiteHeader";
 import { siteConfig } from "@/config/site";
 import "@/styles/globals.css";
 import { cn } from "@/util/cn";
 import { jetBrainsMono } from "@/util/fonts";
 import type { Metadata } from "next";
 import type { PropsWithChildren } from "react";
+import { Providers } from "./providers";
 
 export const metadata: Metadata = {
 	title: siteConfig.title,
@@ -41,14 +41,11 @@ export default function RootLayout({ children }: PropsWithChildren) {
 		<html lang="en" suppressHydrationWarning>
 			<body
 				className={cn(
-					"min-h-svh bg-neutral-900 text-neutral-100 antialiased",
+					"bg-neutral-100 text-neutral-900 antialiased dark:bg-neutral-900 dark:text-neutral-100",
 					jetBrainsMono.className,
 				)}
 			>
-				<div className="mx-auto flex max-w-4xl flex-col px-4 py-8">
-					<SiteHeader />
-					{children}
-				</div>
+				<Providers>{children}</Providers>
 			</body>
 		</html>
 	);
