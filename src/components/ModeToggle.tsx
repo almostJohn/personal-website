@@ -21,12 +21,12 @@ export function ModeToggle() {
 	return (
 		<button
 			className={cn(
-				"inline-flex size-7 cursor-pointer items-center justify-center rounded border border-neutral-300 p-1 transition-colors hover:bg-neutral-200 dark:border-neutral-800 dark:hover:bg-neutral-800",
+				"inline-flex size-8 cursor-pointer items-center justify-center rounded p-2 transition-colors hover:bg-neutral-200 dark:hover:bg-neutral-800",
 			)}
 			onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
 		>
-			<Icons.Sun className="size-4 shrink-0 scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
-			<Icons.Moon className="absolute size-4 shrink-0 scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+			<Icons.Sun className="size-5 shrink-0 scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
+			<Icons.Moon className="absolute size-5 shrink-0 scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
 			<span className="sr-only">Toggle Theme</span>
 		</button>
 	);
