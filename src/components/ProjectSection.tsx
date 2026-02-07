@@ -2,6 +2,22 @@ import { Icons } from "./Icons";
 
 const projects = [
 	{
+		title: "app-stickythoughts",
+		href: "https://app-stickythoughts.vercel.app",
+		description:
+			"Where thoughts are shared freely — post anonymously, send messages without revealing who you are, and speak without filters.",
+		role: "creator and maintainer",
+		stack: [
+			"next.js",
+			"react",
+			"tailwindcss",
+			"typescript",
+			"postgresql",
+			"drizzle-orm",
+			"neon-db",
+		],
+	},
+	{
 		title: "personal-website",
 		href: "https://almostjohn.vercel.app",
 		description: "My corner of the web — projects, ideas, and things I build.",
