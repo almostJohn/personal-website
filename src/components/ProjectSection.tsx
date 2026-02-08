@@ -2,6 +2,13 @@ import { Icons } from "./Icons";
 
 const projects = [
 	{
+		title: "app-kukuys-taryahan",
+		href: "https://app-kukuys-taryahan.vercel.app/",
+		description: "kukuys taryahan app for Dota2/CS2.",
+		role: "creator and maintainer",
+		stack: ["react", "tailwindcss", "typescript", "vite"],
+	},
+	{
 		title: "app-stickythoughts",
 		href: "https://app-stickythoughts.vercel.app",
 		description:
@@ -16,13 +23,6 @@ const projects = [
 			"drizzle-orm",
 			"neon-db",
 		],
-	},
-	{
-		title: "personal-website",
-		href: "https://almostjohn.vercel.app",
-		description: "My corner of the web — projects, ideas, and things I build.",
-		role: "creator and maintainer",
-		stack: ["next.js", "react", "tailwindcss", "typescript"],
 	},
 	{
 		title: "app-tsconfig",
@@ -60,7 +60,7 @@ export function ProjectSection() {
 								<p className="text-sm text-neutral-500">
 									{project.description.toLowerCase()}
 								</p>
-								<div className="mt-4 flex flex-wrap gap-4">
+								<div className="mt-4 flex max-w-lg flex-wrap gap-4">
 									{project.stack.map((item) => (
 										<span
 											key={item}
